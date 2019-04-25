@@ -1,3 +1,13 @@
+function onPoemsClicked() {
+    const params = new URLSearchParams();
+    const user = getAuthorization();
+    params.append("id", user.id);
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', onShopsResponse);
+    xhr.addEventListener('error', onNetworkError);
+    xhr.open('GET', 'protected/poems?' + params.toString());
+    xhr.send();
+}
 function onShopsClicked() {
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('load', onShopsResponse);
