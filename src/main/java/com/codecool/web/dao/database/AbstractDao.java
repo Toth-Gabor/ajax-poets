@@ -34,18 +34,4 @@ abstract class AbstractDao {
         connection.commit();
         return id;
     }
-    
-    int fetchGeneratedUserId(PreparedStatement statement) throws SQLException {
-        int id;
-        try (ResultSet resultSet = statement.getGeneratedKeys()) {
-            if (resultSet.next()) {
-                id = resultSet.getInt(2);
-            } else {
-                connection.rollback();
-                throw new SQLException("Expected 1 result");
-            }
-        }
-        connection.commit();
-        return id;
-    }
 }

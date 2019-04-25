@@ -9,4 +9,6 @@ public interface PoemDao {
     
     List<Poem> findAllByUser(int userId) throws SQLException;
     
+    Poem findById(int id) throws SQLException;
+    
 }

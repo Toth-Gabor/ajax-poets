@@ -27,13 +27,13 @@ public final class SimpleCouponService implements CouponService {
 
     @Override
     public Coupon getCoupon(String id) throws SQLException, ServiceException {
-        try {
-            return couponDao.findById(Integer.parseInt(id));
-        } catch (NumberFormatException ex) {
-            throw new ServiceException("Coupon id must be an integer");
-        } catch (IllegalArgumentException ex) {
-            throw new ServiceException(ex.getMessage());
-        }
+            try {
+                return couponDao.findById(Integer.parseInt(id));
+            } catch (NumberFormatException ex) {
+                throw new ServiceException("Coupon id must be an integer");
+            } catch (IllegalArgumentException ex) {
+                throw new ServiceException(ex.getMessage());
+            }
     }
 
     @Override

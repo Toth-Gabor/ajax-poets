@@ -17,7 +17,7 @@ public class DatabasePoemDao extends AbstractDao implements PoemDao {
     @Override
     public List<Poem> findAllByUser(int userId) throws SQLException {
         List<Poem> poems = new ArrayList<>();
-        String sql = "SELECT id, user_id, title, poem FROM poems WHERE user_id=?";
+        String sql = "SELECT * FROM poems WHERE user_id=?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, userId);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -27,6 +27,20 @@ public class DatabasePoemDao extends AbstractDao implements PoemDao {
             }
         }
         return poems;
+    }
+    
+    @Override
+    public Poem findById(int id) throws SQLException {
+        String sql = "SELECT * FROM poems WHERE id=?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    return fetchPoem(resultSet);
+                }
+            }
+        }
+        return null;
     }
     
     private Poem fetchPoem(ResultSet resultSet) throws SQLException {
