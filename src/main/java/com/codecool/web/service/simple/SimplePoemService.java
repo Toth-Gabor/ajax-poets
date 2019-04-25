@@ -17,7 +17,11 @@ public class SimplePoemService implements PoemService {
     
     @Override
     public List<Poem> getPoemsByUser(int userId) throws SQLException {
-        
-        return null;
+        return poemDao.findAllByUser(userId);
+    }
+    
+    @Override
+    public Poem getPoemById(int id) throws SQLException {
+        return poemDao.findById(id);
     }
 }

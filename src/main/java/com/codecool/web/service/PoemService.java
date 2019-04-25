@@ -9,4 +9,5 @@ public interface PoemService {
     
     List<Poem> getPoemsByUser(int userId) throws SQLException;
     
+    Poem getPoemById(int id) throws SQLException;
 }
