@@ -2,7 +2,6 @@ package com.codecool.web.dao.database;
 
 import com.codecool.web.dao.PoemDao;
 import com.codecool.web.model.Poem;
-import com.codecool.web.model.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,18 +13,6 @@ public class DatabasePoemDao extends AbstractDao implements PoemDao {
         super(connection);
     }
     
-    @Override
-    public List<Poem> findAll() throws SQLException {
-        String sql = "SELECT id, user_id, title, poem FROM poems";
-        try (Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery(sql)) {
-            List<Poem> poems = new ArrayList<>();
-            while (resultSet.next()) {
-                poems.add(fetchPoem(resultSet));
-            }
-            return poems;
-        }
-    }
     
     @Override
     public List<Poem> findAllByUser(int userId) throws SQLException {
@@ -40,16 +27,6 @@ public class DatabasePoemDao extends AbstractDao implements PoemDao {
             }
         }
         return poems;
-    }
-    
-    @Override
-    public Poem findById(int id) throws SQLException {
-        return null;
-    }
-    
-    @Override
-    public Poem add(int id, int userId, String title, String poem) throws SQLException {
-        return null;
     }
     
     private Poem fetchPoem(ResultSet resultSet) throws SQLException {
