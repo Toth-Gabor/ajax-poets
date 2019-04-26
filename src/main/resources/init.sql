@@ -30,7 +30,7 @@ CREATE TABLE poems
 INSERT INTO users (name, email, password)
 VALUES ('József Attila', 'user1@user1', 'user1'), -- 1
        ('Szabó Lőrinc', 'user2@user2', 'user2'), -- 2
-       ('Petőfi Sándor','user2@user3', 'user3'); -- 3
+       ('Petőfi Sándor','user3@user3', 'user3'); -- 3
 
 INSERT INTO poems (id, user_id, title, poem)
 VALUES (1, 1, 'Nagyon fáj', 'kivül-belől

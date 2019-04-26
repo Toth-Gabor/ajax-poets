@@ -21,7 +21,7 @@ public class Poem extends AbstractModel {
         return title;
     }
     
-    public String getPoem() {
+    public String getContent() {
         return content;
     }
 }

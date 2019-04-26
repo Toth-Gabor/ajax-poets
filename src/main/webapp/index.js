@@ -10,6 +10,8 @@ let couponContentDivEl;
 let couponsContentDivEl;
 let shopContentDivEl;
 let shopsContentDivEl;
+let poemContentDivEl;
+let poemsContentDivEl;
 let backToProfileContentDivEl;
 let logoutContentDivEl;
 
@@ -104,6 +106,8 @@ function onLoad() {
     couponsContentDivEl = document.getElementById('coupons-content');
     shopContentDivEl = document.getElementById('shop-content');
     shopsContentDivEl = document.getElementById('shops-content');
+    poemContentDivEl = document.getElementById('poem-content');
+    poemsContentDivEl = document.getElementById("poems-content")
     backToProfileContentDivEl = document.getElementById('back-to-profile-content');
     logoutContentDivEl = document.getElementById('logout-content');
 

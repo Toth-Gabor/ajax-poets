@@ -22,7 +22,7 @@ public final class LoginServlet extends AbstractServlet {
         try (Connection connection = getConnection(req.getServletContext())) {
             UserDao userDao = new DatabaseUserDao(connection);
             LoginService loginService = new SimpleLoginService(userDao);
-
+            
             String email = req.getParameter("email");
             String password = req.getParameter("password");
 
