@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users
 (
     id       SERIAL PRIMARY KEY,
+    name     TEXT        NOT NULL,
     email    TEXT UNIQUE NOT NULL,
     password TEXT        NOT NULL,
     CONSTRAINT email_not_empty CHECK (email <> ''),
@@ -15,10 +16,10 @@ CREATE TABLE users
 
 CREATE TABLE poems
 (
-    id    SERIAL PRIMARY KEY,
-    user_id INT NOT NULL,
-    title TEXT NOT NULL,
-    poem  TEXT NOT NULL,
+    id      SERIAL PRIMARY KEY,
+    user_id INT  NOT NULL,
+    title   TEXT NOT NULL,
+    poem    TEXT NOT NULL,
     CONSTRAINT title_not_empty CHECK (title <> ''),
     CONSTRAINT poem_not_empty CHECK (poem <> ''),
     FOREIGN KEY (user_id) REFERENCES users (id)
@@ -26,13 +27,13 @@ CREATE TABLE poems
 );
 
 
-INSERT INTO users (email, password)
-VALUES ('user1@user1', 'user1'), -- 1
-       ('user2@user2', 'user2'), -- 2
-       ('user2@user3', 'user3'); -- 3
+INSERT INTO users (name, email, password)
+VALUES ('József Attila', 'user1@user1', 'user1'), -- 1
+       ('Szabó Lőrinc', 'user2@user2', 'user2'), -- 2
+       ('Petőfi Sándor','user2@user3', 'user3'); -- 3
 
 INSERT INTO poems (id, user_id, title, poem)
-VALUES (1, 1, 'józsef attila: nagyon fáj', 'kivül-belől
+VALUES (1, 1, 'Nagyon fáj', 'kivül-belől
                 leselkedő halál elől
                 (mint lukba megriadt egérke)
 
@@ -143,7 +144,7 @@ VALUES (1, 1, 'józsef attila: nagyon fáj', 'kivül-belől
                 kivül-belől
                 menekülő élő elől
                 a legutolsó menedéket.'),
-       (2, 2, 'Szabó Lőrinc: Különbéke', 'Ha tudtam volna régen, amit
+       (2, 2, 'Különbéke', 'Ha tudtam volna régen, amit
                 ma már tudok,
                 ha tudtam volna, hogy az élet
                 milyen mocsok,
@@ -231,4 +232,71 @@ VALUES (1, 1, 'józsef attila: nagyon fáj', 'kivül-belől
                 s a leprások közt fütyörészek
                 és nevetek
                 s egyre jobban kezdem szeretni
-                a gyerekeket.');
+                a gyerekeket.'),
+       (3, 3, 'Szeptember végén', 'Még nyílnak a völgyben a kerti virágok,
+                Még zöldel a nyárfa az ablak előtt,
+                De látod amottan a téli világot?
+                Már hó takará el a bérci tetőt.
+                Még ifju szivemben a lángsugarú nyár
+                S még benne virít az egész kikelet,
+                De íme sötét hajam őszbe vegyűl már,
+                A tél dere már megüté fejemet.
+
+                Elhull a virág, eliramlik az élet...
+                Űlj, hitvesem, űlj az ölembe ide!
+                Ki most fejedet kebelemre tevéd le,
+                Holnap nem omolsz-e sirom fölibe?
+                Oh mondd: ha előbb halok el, tetemimre
+                Könnyezve borítasz-e szemfödelet?
+                S rábírhat-e majdan egy ifju szerelme,
+                Hogy elhagyod érte az én nevemet?
+
+                Ha eldobod egykor az özvegyi fátyolt,
+                Fejfámra sötét lobogóul akaszd,
+                Én feljövök érte a síri világból
+                Az éj közepén, s oda leviszem azt,
+                Letörleni véle könyűimet érted,
+                Ki könnyeden elfeledéd hivedet,
+                S e szív sebeit bekötözni, ki téged
+                Még akkor is, ott is, örökre szeret!'),
+       (4, 3, 'Isten csodája', 'Ameddig a történet csillaga
+                Röpíti a multakba sugarát:
+                A szem saját kezünkben mindenütt
+                Saját szivünkre célzó gyilkot lát,
+                S ez öngyilkos kéz hányszor szálla ránk!...
+                Isten csodája, hogy még áll hazánk.
+
+                Igy hordozunk sok százados sebet,
+                Keblünk soha be nem gyógyúlhatott;
+                Mérget kellett mindenkor innia,
+                Ki sebeinkre önte balzsamot.
+                Valami rosz szellemtől származánk!
+                Isten csodája, hogy még áll hazánk.
+
+                S míg egymást martuk szennyes koncokért,
+                Mint a szeméten a silány ebek,
+                Azt vettük észre csak, hogy ezalatt
+                Az oroszlánok itt termettenek;
+                Jött a tatár, jött a török reánk.
+                Isten csodája, hogy még áll hazánk.
+
+                Ott foly Sajó... oly görbén kanyarog,
+                Mint ember, aki görcsben haldokol;
+                Ott haldokoltunk, vérünk ott szivá
+                Az óriási nadály, a mogol,
+                S holttesteinket fölfalá a láng!
+                Isten csodája, hogy még áll hazánk.
+
+                S ott van Mohács... ott nyomta a királyt
+                Sárkoporsóba páncéla s lova,
+                S készűlt számunkra a ledőlt király
+                Kardjából a rettentő zabola,
+                Melytől még most is ég és vérzik szánk!...
+                isten csodája, hogy még áll hazánk.
+
+                Mi lesz belőlünk?... ezt én kérdezem,
+                De mily kevesen gondolnak vele.
+                Oh nemzetem, magyar nép! éltedet
+                Mindig csak a jó sorsra bízod-e?
+                Ne csak istenben bízzunk, mint bizánk;
+                Emberségünkből álljon fönn hazánk!');
