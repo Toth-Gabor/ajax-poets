@@ -111,6 +111,9 @@ function onLoad() {
     backToProfileContentDivEl = document.getElementById('back-to-profile-content');
     logoutContentDivEl = document.getElementById('logout-content');
 
+    const wordCountButtonEl = document.getElementById('word-count-button');
+    wordCountButtonEl.addEventListener('click', onWordCountButtonClick);
+
     const loginButtonEl = document.getElementById('login-button');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);
 

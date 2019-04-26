@@ -51,21 +51,23 @@
     <h1>Poems</h1>
     <table id="poems">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Content</th>
-            </tr>
+
         </thead>
         <tbody>
         </tbody>
     </table>
 </div>
+<br>
 <div id="poem-content" class="hidden content">
     <h1>Poem</h1>
-    <p>ID: <span id="poem-id"></span></p>
-    <p>Title: <span id="poem-title"></span></p>
-    <p>Poem: <span id="poem-body"></span></p>
+    <form id="word-count-form"  onsubmit="return false;">
+        <input type="text" id="word-count-search">
+        <button id="word-count-button">Count words</button>
+    </form>
+    <p><strong>ID: </strong><span id="poem-id"></span></p>
+    <p><strong>Title: </strong><span id="poem-title"></span></p>
+    <p><strong>Poem: </strong></p>
+    <p><span id="poem-body"></span></p>
 </div>
 <div id="back-to-profile-content" class="hidden content">
     <button onclick="onBackToProfileClicked();">Back to profile</button>

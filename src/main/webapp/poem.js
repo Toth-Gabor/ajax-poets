@@ -20,3 +20,10 @@ function onPoemLoad(poemDto) {
     poemContentSpanEl.textContent = poemDto.poem.content;
 
 }
+
+function onWordCountButtonClick() {
+    const poemText = document.getElementById('poem-body').textContent.toLowerCase();
+    const searchPhrase = document.getElementById('word-count-search').value.toLowerCase();
+    const count = (poemText.match(new RegExp(searchPhrase, 'g')) || []).length;
+    alert('Occurences: ' + count);
+}
