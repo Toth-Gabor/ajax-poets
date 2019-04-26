@@ -17,7 +17,7 @@ function onPoemLoad(poemDto) {
 
     poemIdSpanEl.textContent = poemDto.poem.id;
     poemTitleSpanEl.textContent = poemDto.poem.title;
-    poemContentSpanEl.textContent = poemDto.poem.content;
+    poemContentSpanEl.innerHTML = poemDto.poem.content;
 
 }
 

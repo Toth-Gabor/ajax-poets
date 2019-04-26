@@ -48,7 +48,7 @@ public class DatabasePoemDao extends AbstractDao implements PoemDao {
         int id = resultSet.getInt("id");
         int userId = resultSet.getInt("user_id");
         String title = resultSet.getString("title");
-        String poem = resultSet.getString("poem");
+        String poem = resultSet.getString("poem").replace("\n", "<br>");
         return new Poem(id, userId, title, poem);
     }
 }
