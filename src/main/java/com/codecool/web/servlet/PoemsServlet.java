@@ -1,19 +1,11 @@
 package com.codecool.web.servlet;
 
-import com.codecool.web.dao.CouponDao;
 import com.codecool.web.dao.PoemDao;
-import com.codecool.web.dao.ShopDao;
-import com.codecool.web.dao.database.DatabaseCouponDao;
 import com.codecool.web.dao.database.DatabasePoemDao;
-import com.codecool.web.dao.database.DatabaseShopDao;
-import com.codecool.web.model.Coupon;
 import com.codecool.web.model.Poem;
-import com.codecool.web.service.CouponService;
 import com.codecool.web.service.PoemService;
-import com.codecool.web.service.simple.SimpleCouponService;
 import com.codecool.web.service.simple.SimplePoemService;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;

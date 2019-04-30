@@ -9,10 +9,6 @@
         <c:url value="/index.js" var="indexScriptUrl"/>
         <c:url value="/login.js" var="loginScriptUrl"/>
         <c:url value="/profile.js" var="profileScriptUrl"/>
-        <c:url value="/shop.js" var="shopScriptUrl"/>
-        <c:url value="/shops.js" var="shopsScriptUrl"/>
-        <c:url value="/coupon.js" var="couponScriptUrl"/>
-        <c:url value="/coupons.js" var="couponsScriptUrl"/>
         <c:url value="/poem.js" var="poemScriptUrl"/>
         <c:url value="/poems.js" var="poemsScriptUrl"/>
         <c:url value="/back-to-profile.js" var="backToProfileScriptUrl"/>
@@ -21,10 +17,6 @@
         <script src="${indexScriptUrl}"></script>
         <script src="${loginScriptUrl}"></script>
         <script src="${profileScriptUrl}"></script>
-        <script src="${shopScriptUrl}"></script>
-        <script src="${shopsScriptUrl}"></script>
-        <script src="${couponScriptUrl}"></script>
-        <script src="${couponsScriptUrl}"></script>
         <script src="${poemScriptUrl}"></script>
         <script src="${poemsScriptUrl}"></script>
         <script src="${backToProfileScriptUrl}"></script>
@@ -43,15 +35,12 @@
 <div id="profile-content" class="hidden content">
     <h1>Poet</h1>
     <p><span id="user-name"></span></p>
-    <p><span id="user-email"></span></p>
-    <p><span id="user-password"></span></p>
     <a href="javascript:void(0);" onclick="onPoemsClicked();">View poems</a>
 </div>
 <div id="poems-content" class="hidden content">
     <h1>Poems</h1>
     <table id="poems">
         <thead>
-
         </thead>
         <tbody>
         </tbody>
